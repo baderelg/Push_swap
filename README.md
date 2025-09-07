@@ -932,11 +932,11 @@ First, to compile the programs:
 Examples of medium stack testing commands:
 <table align="center">
 	<tr>
-	<th align="center"><code>ARG=$(shuf -i 1-500 -n 10); ./push_swap $ARG</code></th>
+	<th align="center"><code>ARG=$(shuf -i 1-500 -n 10 | tr '\n' ' '); ./push_swap $ARG</code></th>
 	<td align="center">Generate 10 random numbers between 1 and 500 and show the sequences of operations to sort them</td>
 	</tr>
 	<tr>
-	<th align="center"><code>ARG=$(seq -1000 1000 | shuf -n 50); ./push_swap $ARG | wc -l</code></th>
+	<th align="center"><code>ARG=$(seq -1000 1000 | shuf -n 50 | tr '\n' ' '); ./push_swap $ARG | wc -l</code></th>
 	<td align="center">Generate 50 numbers between -1000 and 1000, and calculate the number of lines (operations) it takes to sort them</td>
 	</tr>
 </table>
@@ -944,14 +944,19 @@ Examples of medium stack testing commands:
 Examples of benchmark testing commands:
 <table align="center">
 	<tr>
-	<th align="center"><code>ARG=$(shuf -i 1-10000 -n 100); ./push_swap $ARG | wc -l</code></th>
+	<th align="center"><code>ARG=$(shuf -i 1-10000 -n 100 | tr '\n' ' '); ./push_swap $ARG | wc -l</code></th>
 	<td align="center">Generate 100 numbers between 1 and 10000 and calculate the number of operations it takes</td>
 	</tr>
 	<tr>
-	<th align="center"><code>ARG=$(seq -50000 50000 | shuf -n 500); ./push_swap $ARG | wc -l</code></th>
+	<th align="center"><code>ARG=$(seq -50000 50000 | shuf -n 500 | tr '\n' ' '); ./push_swap $ARG | wc -l</code></th>
 	<td align="center">Generate 500 numbers between -50000 and 50000, and calculate the number of operations it takes</td>
 	</tr>
 </table>
+
+> [!NOTE]
+> I pipe the commands to  `tr '\n' ' '` because based on how the checker provided by the school works, only spaces are handled.\
+> Newlines between numbers should return an error.\
+> The `seq` and `shuf` commands output the numbers on separate lines. Thus the need to transform newlines into spaces.
 
 ⚠️ <ins>Edge cases:</ins>
 ```c
