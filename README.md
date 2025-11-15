@@ -6,7 +6,8 @@
 
 [![42 School](https://img.shields.io/badge/Paris-blue?logo=42&logoColor=fff)](https://42.fr/en/homepage/)
 [![Bonus](https://img.shields.io/badge/✔️_Bonus-5cb85c)](https://github.com/baderelg/Minitalk) \
-[![Validation date](https://img.shields.io/badge/⏳_WAITING_FOR_EVALUATION-ffc83d?style=for-the-badge)](https://github.com/baderelg/Minitalk)
+<img src="https://i.imgur.com/HTci8UV.png" width="100" alt="Validation confirmation on the 42 Intra @baelgadi - Oct 11th 2025"> \
+[![Validation date](https://img.shields.io/date/1760191200?label=&style=for-the-badge&color=5cb85c)](https://github.com/baderelg/Push_swap)
 
 </div>
 
